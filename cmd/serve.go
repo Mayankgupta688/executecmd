@@ -16,10 +16,14 @@ var serveCmd = &cobra.Command{
 	Short: "A brief description of your command",
 	Long:  `This is serve command`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("serve called")
+		inputName, _ := cmd.Flags().GetString("name")
+		inputAge, _ := cmd.Flags().GetString("name")
+		fmt.Println(inputName + inputAge)
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(serveCmd)
+	serveCmd.PersistentFlags().String("name", "dummy", "Enter User Name")
+	serveCmd.PersistentFlags().String("age", "0", "Enter User Age")
 }
