@@ -17,7 +17,7 @@ var serveCmd = &cobra.Command{
 	Long:  `This is serve command`,
 	Run: func(cmd *cobra.Command, args []string) {
 		inputName, _ := cmd.Flags().GetString("name")
-		inputAge, _ := cmd.Flags().GetString("name")
+		inputAge, _ := cmd.Flags().GetString("age")
 		fmt.Println(inputName + inputAge)
 	},
 }
